@@ -5,23 +5,23 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="Palamares")
-public class CPalmares {
-
-
-
+public class CListOfHonors {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(length = 3000)
+    @Column(length = 10000)
     private String description;
 
-    public CPalmares (int id, String description){
+
+    public CListOfHonors(int id, String description){
         this.id= id;
         this.description=description;
     }
-    public CPalmares (){}
+
+    public CListOfHonors(){}
+
 
     public int getId() {
         return id;

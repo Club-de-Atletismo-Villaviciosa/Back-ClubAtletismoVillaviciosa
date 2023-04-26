@@ -38,6 +38,21 @@ public class CAthleteController {
     }
 
     @PutMapping("update/{id}")
+    public ResponseEntity<CAthlete> update(@PathVariable int id, @RequestBody CAthlete athlete){
+        CAthlete currentAthlete = iAthlete.findById(id).orElseThrow(RuntimeException::new);
+        currentAthlete.setName(athlete.getName());
+        currentAthlete.setCategory(athlete.getCategory());
+        currentAthlete.setAthleticDiscipline(athlete.getAthleticDiscipline());
+        currentAthlete.setUrl(athlete.getUrl());
+
+        return ResponseEntity.ok(currentAthlete);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity delete (@PathVariable int id){
+        iAthlete.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
 
 
 

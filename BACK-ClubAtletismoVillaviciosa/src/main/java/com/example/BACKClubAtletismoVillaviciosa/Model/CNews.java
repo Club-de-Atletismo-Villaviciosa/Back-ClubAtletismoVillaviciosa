@@ -12,7 +12,7 @@ public class CNews {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    @Column(length = 3000)
+    @Column(length = 10000)
     private String news;
 
     private String url;
