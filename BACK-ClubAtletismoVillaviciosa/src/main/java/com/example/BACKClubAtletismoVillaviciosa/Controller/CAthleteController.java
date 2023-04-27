@@ -42,8 +42,9 @@ public class CAthleteController {
         CAthlete currentAthlete = iAthlete.findById(id).orElseThrow(RuntimeException::new);
         currentAthlete.setName(athlete.getName());
         currentAthlete.setCategory(athlete.getCategory());
-        currentAthlete.setAthleticDiscipline(athlete.getAthleticDiscipline());
+        currentAthlete.setDiscipline(athlete.getDiscipline());
         currentAthlete.setUrl(athlete.getUrl());
+        currentAthlete.setLicenseNumber(athlete.getLicenseNumber());
 
         return ResponseEntity.ok(currentAthlete);
     }

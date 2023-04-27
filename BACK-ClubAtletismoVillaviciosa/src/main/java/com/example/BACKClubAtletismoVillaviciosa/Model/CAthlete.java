@@ -17,16 +17,17 @@ public class CAthlete {
     private String name;
     private String url;
     private String category;
-    private String athleticDiscipline;
+    private String discipline;
+    private String licenseNumber;
 
-  public CAthlete (int id, String url, String category, String athleticDiscipline, String name){
+  public CAthlete (int id, String url, String category, String discipline, String name, String licenseNumber){
 
-      this.athleticDiscipline=athleticDiscipline;
+      this.discipline=discipline;
       this.id=id;
       this.category=category;
       this.url=url;
       this.name=name;
-
+      this.licenseNumber=licenseNumber;
   }
 
   public CAthlete(){}
@@ -63,12 +64,20 @@ public class CAthlete {
         this.category = category;
     }
 
-    public String getAthleticDiscipline() {
-        return athleticDiscipline;
+    public String getDiscipline() {
+        return discipline;
     }
 
-    public void setAthleticDiscipline(String athleticDiscipline) {
-        this.athleticDiscipline = athleticDiscipline;
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
+
+    public void setDiscipline(String discipline) {
+        this.discipline = discipline;
     }
 
 }
