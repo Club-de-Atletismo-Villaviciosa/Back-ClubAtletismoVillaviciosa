@@ -4,7 +4,9 @@ package com.example.BACKClubAtletismoVillaviciosa.Controller;
 import com.example.BACKClubAtletismoVillaviciosa.Interface.INews;
 import com.example.BACKClubAtletismoVillaviciosa.Model.CNews;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +35,7 @@ public class CNewsController {
     @PostMapping("/save")
     public ResponseEntity<CNews> save(@RequestBody CNews news)throws URISyntaxException {
         CNews savedNews = iNews.save(news);
-        return ResponseEntity.created(new URI("/athelete/" + savedNews.getId())).body(savedNews);
+        return ResponseEntity.created(new URI("/news/" + savedNews.getId())).body(savedNews);
     }
 
     @PutMapping("update/{id}")

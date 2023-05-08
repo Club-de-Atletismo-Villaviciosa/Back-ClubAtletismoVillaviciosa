@@ -15,6 +15,7 @@ public class CAthlete {
 
 
     private String name;
+    @Column(columnDefinition = "LONGTEXT")
     private String url;
     private String category;
     private String discipline;
@@ -25,6 +26,7 @@ public class CAthlete {
       this.discipline=discipline;
       this.id=id;
       this.category=category;
+
       this.url=url;
       this.name=name;
       this.licenseNumber=licenseNumber;

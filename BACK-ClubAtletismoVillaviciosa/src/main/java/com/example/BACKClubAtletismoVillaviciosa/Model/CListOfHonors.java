@@ -4,7 +4,7 @@ package com.example.BACKClubAtletismoVillaviciosa.Model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Palamares")
+@Table(name="listOfHonors")
 public class CListOfHonors {
 
 

@@ -12,9 +12,9 @@ public class CNews {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    @Column(length = 10000)
+    @Column(columnDefinition = "LONGTEXT")
     private String news;
-
+    @Column(columnDefinition = "LONGTEXT")
     private String url;
     private String title;
 
