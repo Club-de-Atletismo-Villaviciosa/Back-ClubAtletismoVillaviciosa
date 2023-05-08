@@ -41,8 +41,7 @@ public class CListOfHonorsController {
     public ResponseEntity<CListOfHonors> update(@PathVariable int id, @RequestBody CListOfHonors listOfHonors){
         CListOfHonors currentListOfHonors = iListOfHonors.findById(id).orElseThrow(RuntimeException::new);
         currentListOfHonors.setDescription(listOfHonors.getDescription());
-
-
+        iListOfHonors.save(currentListOfHonors);
         return ResponseEntity.ok(currentListOfHonors);
     }
 

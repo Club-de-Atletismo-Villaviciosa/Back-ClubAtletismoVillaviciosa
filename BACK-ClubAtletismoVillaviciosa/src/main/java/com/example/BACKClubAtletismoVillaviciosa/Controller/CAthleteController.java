@@ -45,7 +45,7 @@ public class CAthleteController {
         currentAthlete.setDiscipline(athlete.getDiscipline());
         currentAthlete.setUrl(athlete.getUrl());
         currentAthlete.setLicenseNumber(athlete.getLicenseNumber());
-
+        iAthlete.save(currentAthlete);
         return ResponseEntity.ok(currentAthlete);
     }
 

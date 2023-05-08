@@ -44,7 +44,7 @@ public class CNewsController {
         currentNews.setNews(news.getNews());
         currentNews.setTitle(news.getTitle());
         currentNews.setUrl(news.getUrl());
-
+        iNews.save(currentNews);
         return ResponseEntity.ok(currentNews);
     }
 
