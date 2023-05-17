@@ -1,8 +1,10 @@
-package com.example.BACKClubAtletismoVillaviciosa.Controller;
+package com.example.BACKClubAtletismoVillaviciosa.crud.Controller;
+import org.springframework.http.HttpHeaders;
 
-import com.example.BACKClubAtletismoVillaviciosa.Interface.IListOfHonors;
-import com.example.BACKClubAtletismoVillaviciosa.Model.CListOfHonors;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Interface.IListOfHonors;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Model.CListOfHonors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +22,10 @@ public class CListOfHonorsController {
     private IListOfHonors iListOfHonors;
 
     @GetMapping
-    public List<CListOfHonors> getListOfHonors (Model model){
-        return iListOfHonors.findAll();
-
+    public ResponseEntity<List<CListOfHonors>> getListOfHonors (Model model){
+        List<CListOfHonors> list = iListOfHonors.findAll();
+        System.out.println();
+        return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE).body(list);
     }
 
     @GetMapping("/{id}")
@@ -36,10 +39,11 @@ public class CListOfHonorsController {
         return ResponseEntity.created(new URI("/listOfHonors/" + savedListOfHonors.getId())).body(listOfHonors);
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<CListOfHonors> update(@PathVariable int id, @RequestBody CListOfHonors listOfHonors){
         CListOfHonors currentListOfHonors = iListOfHonors.findById(id).orElseThrow(RuntimeException::new);
         currentListOfHonors.setDescription(listOfHonors.getDescription());
+        currentListOfHonors.setId(id);
         iListOfHonors.save(currentListOfHonors);
         return ResponseEntity.ok(currentListOfHonors);
     }

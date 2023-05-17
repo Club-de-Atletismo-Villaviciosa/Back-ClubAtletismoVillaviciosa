@@ -1,8 +1,9 @@
 package com.example.BACKClubAtletismoVillaviciosa.Controller;
 
 
-import com.example.BACKClubAtletismoVillaviciosa.Interface.IListOfHonors;
-import com.example.BACKClubAtletismoVillaviciosa.Model.CListOfHonors;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Controller.CListOfHonorsController;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Interface.IListOfHonors;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Model.CListOfHonors;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

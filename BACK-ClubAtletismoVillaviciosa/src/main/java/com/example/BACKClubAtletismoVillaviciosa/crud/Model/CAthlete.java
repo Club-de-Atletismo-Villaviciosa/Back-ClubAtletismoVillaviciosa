@@ -1,4 +1,4 @@
-package com.example.BACKClubAtletismoVillaviciosa.Model;
+package com.example.BACKClubAtletismoVillaviciosa.crud.Model;
 
 
 import jakarta.persistence.*;

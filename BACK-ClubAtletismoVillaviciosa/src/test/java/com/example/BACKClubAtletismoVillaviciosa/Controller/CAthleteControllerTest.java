@@ -1,8 +1,9 @@
 package com.example.BACKClubAtletismoVillaviciosa.Controller;
 
 
-import com.example.BACKClubAtletismoVillaviciosa.Interface.IAthlete;
-import com.example.BACKClubAtletismoVillaviciosa.Model.CAthlete;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Controller.CAthleteController;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Interface.IAthlete;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Model.CAthlete;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
