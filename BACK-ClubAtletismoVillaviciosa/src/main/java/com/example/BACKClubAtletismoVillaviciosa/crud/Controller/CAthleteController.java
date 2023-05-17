@@ -1,7 +1,7 @@
-package com.example.BACKClubAtletismoVillaviciosa.Controller;
+package com.example.BACKClubAtletismoVillaviciosa.crud.Controller;
 
-import com.example.BACKClubAtletismoVillaviciosa.Interface.IAthlete;
-import com.example.BACKClubAtletismoVillaviciosa.Model.CAthlete;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Interface.IAthlete;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Model.CAthlete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -37,7 +36,7 @@ public class CAthleteController {
         return ResponseEntity.created(new URI("/athelete/" + savedAthlete.getId())).body(savedAthlete);
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<CAthlete> update(@PathVariable int id, @RequestBody CAthlete athlete){
         CAthlete currentAthlete = iAthlete.findById(id).orElseThrow(RuntimeException::new);
         currentAthlete.setName(athlete.getName());

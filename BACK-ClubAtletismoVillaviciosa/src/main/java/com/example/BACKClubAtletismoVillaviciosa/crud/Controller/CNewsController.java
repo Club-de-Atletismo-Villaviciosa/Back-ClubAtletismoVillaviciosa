@@ -1,8 +1,8 @@
-package com.example.BACKClubAtletismoVillaviciosa.Controller;
+package com.example.BACKClubAtletismoVillaviciosa.crud.Controller;
 
 
-import com.example.BACKClubAtletismoVillaviciosa.Interface.INews;
-import com.example.BACKClubAtletismoVillaviciosa.Model.CNews;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Interface.INews;
+import com.example.BACKClubAtletismoVillaviciosa.crud.Model.CNews;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,6 @@ public class CNewsController {
     @GetMapping
     public List<CNews> getNews (Model model){
         return iNews.findAll();
-
     }
 
     @GetMapping("/{id}")
@@ -38,7 +37,7 @@ public class CNewsController {
         return ResponseEntity.created(new URI("/news/" + savedNews.getId())).body(savedNews);
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<CNews> update(@PathVariable int id, @RequestBody CNews news){
         CNews currentNews = iNews.findById(id).orElseThrow(RuntimeException::new);
         currentNews.setNews(news.getNews());
