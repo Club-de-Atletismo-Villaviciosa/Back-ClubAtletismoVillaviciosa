@@ -1,7 +1,6 @@
 package com.example.BACKClubAtletismoVillaviciosa.Controller;
 
 import com.example.BACKClubAtletismoVillaviciosa.Interface.IListOfHonors;
-import com.example.BACKClubAtletismoVillaviciosa.Model.CAthlete;
 import com.example.BACKClubAtletismoVillaviciosa.Model.CListOfHonors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

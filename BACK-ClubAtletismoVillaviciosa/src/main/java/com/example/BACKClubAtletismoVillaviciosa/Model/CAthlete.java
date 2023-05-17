@@ -21,6 +21,7 @@ public class CAthlete {
     private String discipline;
     private String licenseNumber;
 
+
   public CAthlete (int id, String url, String category, String discipline, String name, String licenseNumber){
 
       this.discipline=discipline;
@@ -32,7 +33,7 @@ public class CAthlete {
       this.licenseNumber=licenseNumber;
   }
 
-  public CAthlete(){}
+    public CAthlete(){}
 
     public String getName() {
         return name;
