@@ -23,6 +23,7 @@ public class CNews {
     @Column(name = "date")
     private LocalDateTime date;
 
+
     @PrePersist
     public void prePersist() {
         date = LocalDateTime.now();
@@ -68,5 +69,12 @@ public class CNews {
         this.title = title;
     }
 
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
 }
