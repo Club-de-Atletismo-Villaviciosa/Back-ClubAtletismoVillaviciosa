@@ -3,6 +3,8 @@ package com.example.BACKClubAtletismoVillaviciosa.crud.Model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name= "News")
 public class CNews {
@@ -17,6 +19,14 @@ public class CNews {
     @Column(columnDefinition = "LONGTEXT")
     private String url;
     private String title;
+
+    @Column(name = "date")
+    private LocalDateTime date;
+
+    @PrePersist
+    public void prePersist() {
+        date = LocalDateTime.now();
+    }
 
     public CNews (int id, String news,String url, String title) {
         this.id=id;

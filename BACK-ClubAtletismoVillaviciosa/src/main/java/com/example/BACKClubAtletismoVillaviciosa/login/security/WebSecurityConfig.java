@@ -1,5 +1,6 @@
 package com.example.BACKClubAtletismoVillaviciosa.login.security;
 
+import com.example.BACKClubAtletismoVillaviciosa.login.enums.ERole;
 import com.example.BACKClubAtletismoVillaviciosa.login.security.jwt.AuthEntryPointJwt;
 import com.example.BACKClubAtletismoVillaviciosa.login.security.jwt.AuthTokenFilter;
 import com.example.BACKClubAtletismoVillaviciosa.login.security.services.UserDetailsServiceImpl;
@@ -69,8 +70,7 @@ public class WebSecurityConfig {
                 .requestMatchers(GET, "/api/v1/athlete").permitAll()
                 .requestMatchers(GET, "/api/v1/listOfHonors").permitAll()
                 .requestMatchers(GET, "/api/v1/news").permitAll()
-//                .requestMatchers(POST, "/api/v1/listOfHonors").authenticated()
-                .anyRequest().permitAll();
+                .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());
 

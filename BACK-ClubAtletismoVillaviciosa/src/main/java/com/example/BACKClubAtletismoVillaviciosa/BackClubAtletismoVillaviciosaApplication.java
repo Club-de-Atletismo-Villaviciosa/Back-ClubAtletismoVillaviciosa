@@ -9,7 +9,6 @@ public class BackClubAtletismoVillaviciosaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackClubAtletismoVillaviciosaApplication.class, args);
-
 	}
 
 }
