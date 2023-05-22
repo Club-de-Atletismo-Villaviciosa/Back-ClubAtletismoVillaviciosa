@@ -21,6 +21,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import java.net.URISyntaxException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -48,8 +49,8 @@ class CNewsControllerTest {
     void getNews() throws Exception{
 
         List<CNews> news = new ArrayList<CNews>();
-        news.add(new CNews(1,"news", "url", "title"));
-        news.add(new CNews(2,"news", "url", "title"));
+        news.add(new CNews(1,"news", "url", "title", LocalDateTime.now()));
+        news.add(new CNews(2,"news", "url", "title",LocalDateTime.now()));
 
         Mockito.when(iNews.findAll()).thenReturn(news);
         MockHttpServletResponse response = mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/news")
@@ -68,7 +69,7 @@ class CNewsControllerTest {
     void getCNewsBy() {
 
         int id = 1;
-        CNews news = new CNews(1,"news", "url", "title");
+        CNews news = new CNews(1,"news", "url", "title",LocalDateTime.now());
         Mockito.when(iNews.findById(id)).thenReturn(Optional.of(news));
 
         CNews result = cNewsController.getCNewsBy(id);
@@ -79,7 +80,7 @@ class CNewsControllerTest {
     @Test
     void saveNews() throws URISyntaxException{
 
-        CNews news = new CNews(1,"news", "url", "title");
+        CNews news = new CNews(1,"news", "url", "title", LocalDateTime.now());
 
         Mockito.when(iNews.save(news)).thenReturn(news);
 
@@ -94,8 +95,8 @@ class CNewsControllerTest {
     void updateNews() {
 
         int id = 1;
-        CNews currentNews = new CNews(1,"news", "url", "title");
-        CNews updatedNews = new CNews(2,"news", "url", "title");
+        CNews currentNews = new CNews(1,"news", "url", "title", LocalDateTime.now());
+        CNews updatedNews = new CNews(2,"news", "url", "title", LocalDateTime.now());
 
         Mockito.when(iNews.findById(id)).thenReturn(Optional.of(currentNews));
         Mockito.when(iNews.save(currentNews)).thenReturn(currentNews);

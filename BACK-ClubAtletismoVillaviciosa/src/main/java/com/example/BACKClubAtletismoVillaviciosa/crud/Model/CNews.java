@@ -20,6 +20,8 @@ public class CNews {
     private String url;
     private String title;
 
+
+
     @Column(name = "date")
     private LocalDateTime date;
 
@@ -28,11 +30,13 @@ public class CNews {
         date = LocalDateTime.now();
     }
 
-    public CNews (int id, String news,String url, String title) {
+    public CNews (int id, String news,String url, String title, LocalDateTime date) {
+
         this.id=id;
         this.news=news;
         this.title=title;
         this.url=url;
+        this.date=date;
 
     }
     public CNews (){}
@@ -66,6 +70,13 @@ public class CNews {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
 
