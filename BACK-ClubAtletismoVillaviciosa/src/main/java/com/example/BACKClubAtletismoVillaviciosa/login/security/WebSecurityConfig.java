@@ -67,9 +67,9 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/auth/**").permitAll()
                 .requestMatchers("/api/v1/test/**").permitAll()
-                .requestMatchers(GET, "/api/v1/athlete").permitAll()
-                .requestMatchers(GET, "/api/v1/listOfHonors").permitAll()
-                .requestMatchers(GET, "/api/v1/news").permitAll()
+                .requestMatchers(GET, "/api/v1/athlete/**").permitAll()
+                .requestMatchers(GET, "/api/v1/listOfHonors/**").permitAll()
+                .requestMatchers(GET, "/api/v1/news/**").permitAll()
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());

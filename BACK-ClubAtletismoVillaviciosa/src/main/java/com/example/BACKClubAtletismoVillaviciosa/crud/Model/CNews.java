@@ -29,12 +29,12 @@ public class CNews {
         date = LocalDateTime.now();
     }
 
-    public CNews (int id, String news,String url, String title) {
+    public CNews (int id, String news,String url, String title, LocalDateTime date) {
         this.id=id;
         this.news=news;
         this.title=title;
         this.url=url;
-
+        this.date=date;
     }
     public CNews (){}
 
